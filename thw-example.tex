@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{mwe}
+\usepackage{blindtext}
+
+\title{THW Präsentation}
+\author{Patrick Cönen \texttt{coenen@thw-aachen.de}}
+\date{\LaTeX-Template\\\insertauthor}
+
+\usetheme{thw}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section*{Agenda}
+\begin{frame}
+  \frametitle{Agenda}
+  \tableofcontents
+\end{frame}
+
+\section{Lists}
+
+\begin{frame}
+  \frametitle{ListsFrame}
+  \framesubtitle{Subtitle}
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+      \item<1->{Item 1}
+      \item<2->{Item 2}
+    \end{itemize}
+    \column{0.5\textwidth}
+    \begin{enumerate}
+      \item<1->{Item 1}
+      \item<2->{Item 2}
+    \end{enumerate}
+  \end{columns}
+\end{frame}
+
+\section{Images}
+
+\begin{frame}
+  \frametitle{ImageFrame}
+    \centering
+    \includegraphics[keepaspectratio,width=0.7\textwidth]{example-image}
+\end{frame}
+
+\section{Text}
+
+\begin{frame}
+  \frametitle{TextFrame}
+  \small{}
+  \blindtext
+\end{frame}
+
+\end{document}

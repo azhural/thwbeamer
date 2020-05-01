@@ -1,0 +1,46 @@
+\mode<presentation>
+
+\RequirePackage{tikz}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fill[color=THWblue] (0, \the\paperheight * 0.912) rectangle(\the\paperwidth, \the\paperheight);
+    \node[inner sep=0pt,anchor=north east] (logo) at (0.983 * \the\paperwidth, 0.989 * \the\paperheight) {
+      \includegraphics[keepaspectratio,height=0.066\paperheight]{images/thw-logo.png}
+    };
+    \ifnum\thepage>1
+    \fill[color=THWyellow] (0.035 * \the\paperwidth,0.875 * \the\paperheight) rectangle (0.054 * \the\paperwidth,0.828 * \the\paperheight);
+    \draw[color=THWtickline, dash pattern=on 1.25pt off 0.5pt] (0.054 * \the\paperwidth, 0.875 * \the\paperheight) -- (0.054 * \the\paperwidth,0);
+    \else
+    \fill[color=THWyellow] (0.105 * \the\paperwidth,0.867 * \the\paperheight) rectangle (0.134 * \the\paperwidth,0.797 * \the\paperheight);
+    \draw[color=THWtickline, dash pattern=on 1.25pt off 0.5pt] (0.134 * \the\paperwidth, 0.867 * \the\paperheight) -- (0.134 * \the\paperwidth,0);
+    \fi
+  \end{tikzpicture}
+}
+
+\defbeamertemplate*{title page}{thw}[1][]
+{ 
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  %\draw[step=0.05cm] (0,\the\paperheight) grid (\the\paperwidth,0);
+  \node[inner sep=0,anchor=north west] at (0.9cm,{\the\paperheight-1.23cm} ) {
+    \begin{beamercolorbox}[wd=10cm,sep=0pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}
+  };
+  \node[inner sep=0,anchor=north west] at (0.9cm,{\the\paperheight-2cm} ) {
+    \includegraphics[keepaspectratio,width=8.75cm]{images/title-image.jpeg}
+  };
+  \node[inner sep=0,anchor=north west] at (0.9cm,{\the\paperheight-7.4cm} ) {
+    \begin{beamercolorbox}[wd=10cm,sep=0pt,#1]{date}
+      \usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+  };
+\end{tikzpicture}
+}
+
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode<all>
