@@ -40,7 +40,25 @@
 \end{tikzpicture}
 }
 
+\defbeamertemplate{section in toc}{thw}
+{\leavevmode\leftskip=1.75ex%
+  \llap{%
+    \usebeamercolor[bg]{section number projected}%
+    \vrule width1.25ex height1.25ex}\kern1ex\inserttocsection\par}
+
+\defbeamertemplate{subsection in toc}{thw}
+{\leavevmode\leftskip=5ex\llap{%
+    \usebeamercolor[bg]{subsection number projected}%
+    \vrule width1ex height1ex\kern1ex}\inserttocsubsection\par}
+
+\defbeamertemplate{subsubsection in toc}{thw}
+{\leavevmode\normalsize\usebeamerfont{subsection in
+    toc}\leftskip=7ex\usebeamerfont{subsubsection in toc}%
+  \llap{%
+    \usebeamercolor[bg]{subsubsection number projected}%
+    \vrule width0.75ex height0.75ex\kern1ex}\inserttocsubsubsection\par}
+
 \setbeamertemplate{items}[square]
-\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{sections/subsections in toc}[thw]
 
 \mode<all>
