@@ -33,6 +33,11 @@
     \includegraphics[keepaspectratio,width=8.75cm]{images/title-image.jpeg}
   };
   \node[inner sep=0,anchor=north west] at (0.9cm,{\the\paperheight-7.4cm} ) {
+    \begin{beamercolorbox}[wd=10cm,sep=0pt,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+  };
+  \node[inner sep=0,anchor=north west] at (10cm,{\the\paperheight-1.05cm} ) {
     \begin{beamercolorbox}[wd=10cm,sep=0pt,#1]{date}
       \usebeamerfont{date}\insertdate%
     \end{beamercolorbox}
