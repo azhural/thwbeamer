@@ -63,7 +63,17 @@
     \usebeamercolor[bg]{subsubsection number projected}%
     \vrule width0.75ex height0.75ex\kern1ex}\inserttocsubsubsection\par}
 
+\newenvironment{bullets}{\startbullets}{}
+\def\startbullets#1\end{
+  \setlength{\leftmargini}{0pt}
+  \setlength{\labelsep}{3pt}
+  \begin{itemize}
+      #1
+  \end{itemize}
+\end}
+
 \setbeamertemplate{items}[square]
 \setbeamertemplate{sections/subsections in toc}[thw]
+
 
 \mode<all>
